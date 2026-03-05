@@ -3,9 +3,9 @@
 import React from "react";
 
 export default function IMCForm() {
-  const [peso, setPeso] = React.useState<string | null>(null);
-  const [altura, setAltura] = React.useState<string | null>(null);
-  const [resultado, setResultado] = React.useState<string | null>(null);
+  const [peso, setPeso] = React.useState("");
+  const [altura, setAltura] = React.useState("");
+  const [imc, setImc] = React.useState("");
 
   function handleSubmit(evt: React.FormEvent) {
     evt.preventDefault();
@@ -14,7 +14,7 @@ export default function IMCForm() {
       const alturaNumber = Number(altura) / 100;
       const total = (pesoNumber / (alturaNumber * alturaNumber)).toFixed(2);
 
-      setResultado(total);
+      setImc(total);
     }
   }
 
@@ -26,8 +26,8 @@ export default function IMCForm() {
           id="peso"
           name="peso"
           type="text"
-          value={peso ?? ""}
-          onChange={({ target }) => setPeso(target.value ?? "")}
+          value={peso}
+          onChange={({ target }) => setPeso(target.value)}
         />
       </label>
       <label htmlFor="altura">
@@ -36,12 +36,12 @@ export default function IMCForm() {
           id="altura"
           name="altura"
           type="text"
-          value={altura ?? ""}
-          onChange={({ target }) => setAltura(target.value ?? "")}
+          value={altura}
+          onChange={({ target }) => setAltura(target.value)}
         />
       </label>
       <button>Calcular</button>
-      {resultado && <p className="answer">IMC = {resultado}</p>}
+      {imc && <p className="answer">IMC = {imc}</p>}
     </form>
   );
 }
