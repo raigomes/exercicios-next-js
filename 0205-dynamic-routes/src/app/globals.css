@@ -138,3 +138,17 @@ img {
   list-style: none;
   padding: 0;
 }
+
+.cardList {
+  max-width: 1000px;
+  flex-wrap: wrap;
+}
+
+.card {
+  list-style: none;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 1.5rem;
+  flex: 1 1 230px;
+  white-space: nowrap;
+}
