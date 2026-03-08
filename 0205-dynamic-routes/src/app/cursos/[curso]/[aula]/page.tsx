@@ -1,12 +1,16 @@
 import { getAula } from "@/api/cursos";
+import ButtonBack from "@/components/ButtonBack";
 import React from "react";
-import ButtonBack from "./ButtonBack";
 
 interface AulaProps {
-  slug: string;
+  params: {
+    curso: string;
+    aula: string;
+  };
 }
 
-export default async function Aula({ slug }: AulaProps) {
+export default async function AulaPage({ params }: AulaProps) {
+  const slug = `${params.curso}/${params.aula}`;
   const aula = await getAula(slug);
 
   return (

@@ -3,10 +3,13 @@ import Link from "next/link";
 import React from "react";
 
 interface CursoProps {
-  slug: string;
+  params: {
+    curso: string;
+  };
 }
 
-export default async function Curso({ slug }: CursoProps) {
+export default async function CursoPage({ params }: CursoProps) {
+  const slug = params.curso;
   const curso = await getCurso(slug);
   return (
     <div>
