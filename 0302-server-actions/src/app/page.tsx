@@ -6,6 +6,13 @@
 // - Crie uma ação que consiga pegar cookies (mesmo HTTPOnly), deve ser possível passar a chave/valor
 // - Use um botão para ativar essa ação, ela deve retornar o valor do cookie e ele deve ser mostrado na tela
 
+import ButtonToken from "@/components/buttonToken";
+
 export default function Home() {
-  return <div>Home</div>;
+  return (
+    <div>
+      <h1>Home</h1>
+      <ButtonToken />
+    </div>
+  );
 }
